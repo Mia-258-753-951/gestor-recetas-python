@@ -9,12 +9,13 @@ class Ingrediente:
     unidad: str
     
     def __repr__(self) -> str:
-        return (f'Ingrediente: {self.nombre}- Stock: {self.cantidad}- unidad: {self.unidad}')
+        return (f'{self.cantidad} {self.unidad} de {self.nombre}')
     
     def modificar_stock(self, cantidad: float) -> float:
-        if self.cantidad < 0:
+        nuevo_stock = self.cantidad + cantidad
+        if nuevo_stock < 0:
             raise ValueError('Error: el stock no puede ser menor que 0.')
-        self.cantidad += float
+        self.cantidad = nuevo_stock
         return self.cantidad
     
     
